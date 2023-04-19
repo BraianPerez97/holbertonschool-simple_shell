@@ -9,21 +9,27 @@
 
 int main(int ac, char **argv)
 {
-	/* declaring variables */
-	char *prompt = "(Shelly) $";
+	char *prompt = "~/Shelly $ ";
 	size_t size = 0;
 	char *obt_line;
+	ssize_t nchars_read;
 
-	/* creating an infinite loop */
+	/* declaring void variables */
 	(void)ac; (void)argv;
-	/*start of code*/
+	/* creating infinite loop */
 	while (1)
 	{
 		printf("%s", prompt);
-		getline(&obt_line, &size, stdin);
+		nchars_read = getline(&obt_line, &size, stdin);
+		if (nchars_read == -1)
+		{
+		/* exiting shell prompt */ 
+		printf("Exiting shell.\n");
+		return(-1);
+		}
 		printf("%s\n", obt_line);
-
 	}
+	/* free allocated memory */
 	free(obt_line);
 	return(0);
 }
