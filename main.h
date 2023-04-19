@@ -14,6 +14,6 @@
 #include <signal.h>
 
 /*List of Prototypes*/
-int main(int ac __attribute__((unused)), char **ac __attribute__((unused));
+int main(int ac, char **argv);
 
 #endif

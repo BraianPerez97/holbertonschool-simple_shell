@@ -7,18 +7,23 @@
  * Return: 0 if succesful
  */
 
-int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
+int main(int ac, char **argv)
 {
 	/* declaring variables */
 	char *prompt = "(Shelly) $";
 	size_t size = 0;
 	char *obt_line;
-	
-	/*start of code*/
-	printf("%s", prompt);
-	getline(&obt_line, &size, stdin);
-	print("%s\n", obt_line);
 
+	/* creating an infinite loop */
+	(void)ac; (void)argv;
+	/*start of code*/
+	while (1)
+	{
+		printf("%s", prompt);
+		getline(&obt_line, &size, stdin);
+		printf("%s\n", obt_line);
+
+	}
 	free(obt_line);
 	return(0);
-{
+}
