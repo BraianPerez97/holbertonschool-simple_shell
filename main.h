@@ -15,5 +15,5 @@
 
 /*List of Prototypes*/
 int main(int ac, char **argv);
-
+char *strtok(char *string1, const char *string2);
 #endif
