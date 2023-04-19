@@ -1,8 +1,14 @@
-#ifndef MAIN_
-#define MAIN_
+#include "main.h"
 
-#include <stdio.h>
-#include <unistd.h>
+/**
+ *
+ *
+ *
+ *
+ */
 
-#endif
+int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
+{
 
+
+{
