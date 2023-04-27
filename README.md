@@ -1,10 +1,26 @@
 # **C - Simple Shell**
 
-## **DESCRIPTION**
+# **Table of contents**
 
-Shell scripts allow us to program commands in chains and have the system execute them as a scripted event, just like batch files. They also allow for far more useful functions, such as command substitution. You can invoke a command, like date, and use it’s output as part of a file-naming scheme. You can automate backups and each copied file can have the current date appended to the end of its name. Scripts aren’t just invocations of commands, either. They’re programs in their own right. Scripting allows you to use programming functions — such as ‘for’ loops, if/then/else statements, and so forth — directly within your operating system’s interface.
+[Description](#Description)
 
-# **List of allowed functions and system calls**
+[Allowed functions and system calls](#Allowed-functions-and-system-calls)
+
+[Compilation](#Compilation)
+
+[Testing](#Testing)
+
+[Output](#Output)
+
+[Tasks](#Tasks)
+
+[Authors](#Authors)
+
+## **Description**
+
+This basic command-line interpreter can process command lines with arguments and look for executables in the directories given in the PATH environment variable. It is called a simple shell. Errors can be handled, and the "end of file" circumstance can be handled. The shell can manage straightforward command lines with only one word, but it does not support complex features like semicolons, pipes, or input/output redirection. Each time a command is run, the shell shows a prompt and ends each command line with a new line. The user can exit the shell with the built-in "exit" command, and the "env" command prints the current environment. The shell prints an error message and re-displays the prompt if an executable cannot be located. 
+
+# **Allowed functions and system calls**
 
 * access (man 2 access)
 * chdir (man 2 chdir)
@@ -47,7 +63,7 @@ Shell scripts allow us to program commands in chains and have the system execute
 
 * Our shell will be compiled this way:
 
-```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh						       ```
+```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 # **Testing**
 
@@ -145,3 +161,7 @@ Simple shell 0.3 +
 Simple shell 0.4 +
 
 * Implement the env built-in, that prints the current environment.
+
+# **Authors**
+
+This project was assigned to and created by `Braian Perez` and `Miguel Montero`
