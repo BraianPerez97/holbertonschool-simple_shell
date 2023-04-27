@@ -1,6 +1,6 @@
 # **C - Simple Shell**
 
-# **Table of contents**
+# **Table of content**
 
 [Description](#Description)
 
