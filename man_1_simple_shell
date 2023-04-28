@@ -1,0 +1,42 @@
+.TH man 8 "27 April 2023" "0.02" "Shelly - Man Page"
+
+.SH NAME
+Shelly - command interpreter.
+
+.SH SYNOPSIS
+ls [command...] -l [option...] filename [file...]
+
+.SH DESCRIPTION
+Shelly is a program that takes commands from the keyboard (user) and gives them to the operating system to perform.
+
+.SH OVERVIEW
+Shelly is a command that reads lines from either a file or the terminal, interprets, and executes other commands. It is the program that is running when a user logs into the system (although a user can select a different shell with the chsh(1) command). The shell implements a language that has flow control constructs, a macro facility that provides a variety of features in addition to data storage, along with built in history and line editing capabilities. It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use (shell scripts). That is, commands can be typed directly to the running shell or can be put into a file and the file can be executed directly by the shell.
+
+.SH SEARCH AND EXECUTION
+There are three types of commands: shell functions, builtin commands, and normal programs -- and the command is searched for (by name) in that order. They each are executed in a different way.
+
+When a shell function is executed, all of the shell positional parameters (except $0, which remains unchanged) are set to the arguments of the shell function. The variables which are explicitly placed in the environment of the command (by placing assignments to them before the function name) are made local to the function and are set to the values given. Then the command given in the function definition is executed. The positional parameters are restored to their original values when the command completes. This all occurs within the current shell.
+
+Shell builtins are executed internally to the shell, without spawning a new process.
+
+Otherwise, if the command name doesn't match a function or builtin, the command is searched for as a normal program in the file system (as described in the next section). When a normal program is executed, the shell runs the program, passing the arguments and the environment to the program. If the program is not a normal executable file the shell will interpret the program in a subshell. The child shell will reinitialize itself in this case, so that the effect will be as if a new shell had been invoked to handle the ad-hoc shell script, except that the location of hashed commands located in the parent shell will be remembered by the child.
+
+.SH PATH SEARCH
+When locating a command, the shell first looks to see if it has a shell function by that name. Then it looks for a builtin command by that name. If a builtin command is not found, one of two things happen:
+
+.TP
+.BR 1.
+Command names containing a slash are simply executed without performing any searches.
+
+.TP
+.BR 2.
+The shell searches each entry in PATH in turn for the command. The value of the PATH variable should be a series of entries separated by colons. Each entry consists of a directory name. The current directory may be indicated implicitly by an empty directory name, or explicitly by a single period.
+
+It's important to note that the order of directories in the PATH variable matters. If two or more directories contain a program with the same name, the one in the directory that appears first in the PATH
+
+.SH AUTHORS
+.TP 
+Braian Perez (github @bapc2025)
+
+.TP 
+Miguel Montero (github @PhantomMik3)
