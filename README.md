@@ -1,5 +1,7 @@
 # **C - Simple Shell**
 
+![shell design photo](shell.png)
+
 # **Table of content**
 
 [Description](#Description)
